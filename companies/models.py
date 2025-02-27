@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Company(models.Model):
+class Company(models.Model):  # Include a field geo data
     name = models.CharField(max_length=255)
     address = models.TextField()
     postcode = models.CharField(max_length=10)

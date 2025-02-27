@@ -4,3 +4,4 @@ from .models import CustomUser, StudentProfile, SupervisorProfile
 
 
 class CustomUserAdmin(admin.ModelAdmin):
+    pass
