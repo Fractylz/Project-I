@@ -1,4 +1,4 @@
-# Student Tracking Web App
+# Student Tracking Web  ( Ni Palatao GPT Supaya At Least Ada Frame README)
 
 ## 📌 Project Overview
 The **Student Tracking Web App** is a Django-based web application designed to help educators efficiently manage and monitor student internships. The system replaces traditional spreadsheets with a scalable, user-friendly solution.

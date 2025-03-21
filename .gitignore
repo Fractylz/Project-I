@@ -1,2 +1,31 @@
-/db.sqlite3
-/manage.py
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+*.venv
+Pipfile
+Pipfile.lock
+
+# Django
+db.sqlite3
+/media/
+/staticfiles/
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+
+
+# Docker & Deployment
+*.dockerfile
+.envrc
+*.tar
+
