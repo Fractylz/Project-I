@@ -31,5 +31,4 @@ db.sqlite3
 
 # Project-specific data folder
 project_data/
-wiki/
 .pytest_cache/

@@ -17,7 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from debug_toolbar.toolbar import debut_toolbar_urls
+from django.conf import settings
 
-urlpatterns = [
-    path("admin/", admin.site.urls),
-]
+if not settings.TESTING:
+    urlpatterns = [
+        path("admin/", admin.site.urls),
+    ] + debut_toolbar_urls()
