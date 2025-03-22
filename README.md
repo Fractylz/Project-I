@@ -1,7 +1,7 @@
-# Student Tracking Web  ( Ni Palatao GPT Supaya At Least Ada Frame README)
+# Student Tracking Web  
 
 ## 📌 Project Overview
-The **Student Tracking Web App** is a Django-based web application designed to help educators efficiently manage and monitor student internships. The system replaces traditional spreadsheets with a scalable, user-friendly solution.
+**Project-I** is a Django-based web application designed to help internship supervisors efficiently manage and monitor student internship progress for their respective internship periods. The system replaces traditional spreadsheets with a scalable, user-friendly solution.
 
 ## 🚀 Features
 - 🔍 **Student Database Management**: Add, update, and track students easily.
@@ -26,8 +26,8 @@ Ensure you have the following installed:
 ### Installation
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-username/student-tracking-webapp.git
-   cd student-tracking-webapp
+   git clone https://github.com/Fractylz/Project-I.git
+   cd Project-I
    ```
 
 2. **Set Up the Virtual Environment**
@@ -53,7 +53,7 @@ Ensure you have the following installed:
    Access the app at [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## 📝 Usage
-- **Admin Panel**: Navigate to `/admin/` to manage students and internships.
+- **Admin Panel**: Navigate to `/admin/` to manage supervisors, students and internships.
 - **Student Dashboard**: Students can log in and track their internship progress.
 - **Supervisor Access**: Supervisors can update student performance records.
 
@@ -69,5 +69,5 @@ Contributions are welcome! Follow these steps:
 This project is licensed under the MIT License. See `LICENSE` for details.
 
 ## 📬 Contact
-For any questions or feedback, reach out at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, reach out at [ariffnorhishambusiness@gmail.com](mailto:ariffnorhishambusiness@gmail.com).
 
