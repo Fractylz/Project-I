@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 pandas = "*"
 openpyxl = "*"
+pytest = "*"
+pytest-django = "*"
+pytest-cov = "*"
 
 [dev-packages]
 
