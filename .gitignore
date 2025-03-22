@@ -29,3 +29,6 @@ db.sqlite3
 .envrc
 *.tar
 
+# Project-specific data folder
+project_data/
+wiki/
