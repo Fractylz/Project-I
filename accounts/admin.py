@@ -20,3 +20,6 @@ class StudentProfileAdmin(admin.ModelAdmin):
 class SupervisorProfileAdmin(admin.ModelAdmin):
     list_display = ["user", "campus"]
     search_fields = ["user__username", "campus"]
+
+
+###########33##
