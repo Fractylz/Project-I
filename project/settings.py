@@ -34,6 +34,7 @@ TESTING = "test" in sys.argv
 
 # Application definition
 INSTALLED_APPS = [
+    "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
@@ -47,6 +48,9 @@ INSTALLED_APPS = [
     "rest_framework",
 ]
 
+AUTH_USER_MODEL = "accounts.CustomUser"
+
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -58,7 +62,7 @@ MIDDLEWARE = [
 ]
 
 if not TESTING:
-    INSTALLED_APPS.insert(0, "django.contrib.admin")  # Admin is needed outside of tests
+    # INSTALLED_APPS.insert(0, "django.contrib.admin")  # Admin is needed outside of tests
     INSTALLED_APPS.append("debug_toolbar")  # Debug toolbar only in non-testing mode
     MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
 
