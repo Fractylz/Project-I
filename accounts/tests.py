@@ -7,9 +7,14 @@ class TestCustomUser(TestCase):
         self.User = get_user_model()
 
     def test_create_user(self):
+        print("Existing users before test:", self.User.objects.all())
+
         user = self.User.objects.create_user(
             username="normaluser", email="normal@user.com", password="foo"
         )
+
+        print("User created:", user)
+
         self.assertEqual(user.username, "normaluser")
         self.assertEqual(user.email, "normal@user.com")
         self.assertTrue(user.is_active)
