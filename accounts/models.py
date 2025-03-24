@@ -9,6 +9,13 @@ class CustomUser(AbstractUser):
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="student")
 
+    groups = models.ManyToManyField(
+        Group, related_name="customuser_set", blank=True
+    )  # Already built in, consider removing
+    user_permissions = models.ManyToManyField(
+        Permission, related_name="customuser_permissions_set", blank=True
+    )
+
 
 class BaseProfile(models.Model):  # Study balik
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
