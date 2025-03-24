@@ -1,4 +1,4 @@
-# Student Tracking Web  
+# Student Tracking Web Application Using Python Django
 
 ## 📌 Project Overview
 **Project-I** is a Django-based web application designed to help internship supervisors efficiently manage and monitor student internship progress for their respective internship periods. The system replaces traditional spreadsheets with a scalable, user-friendly solution.
@@ -22,6 +22,8 @@ Ensure you have the following installed:
 - Python 3.10+
 - Pipenv (for virtual environment management)
 - PostgreSQL (if using a database other than SQLite)
+- Git (for collaboration and version control)
+- GitHub Account (for collaboration and version control)
 
 ### Installation
 1. **Clone the Repository**
@@ -51,6 +53,10 @@ Ensure you have the following installed:
    python manage.py runserver
    ```
    Access the app at [http://127.0.0.1:8000](http://127.0.0.1:8000).
+
+6. **Signs You've Succeeded**
+![alt text](image.png)
+
 
 ## 📝 Usage
 - **Admin Panel**: Navigate to `/admin/` to manage supervisors, students and internships.

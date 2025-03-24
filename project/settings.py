@@ -33,34 +33,38 @@ TESTING = "test" in sys.argv
 
 
 # Application definition
-if not TESTING:
-    INSTALLED_APPS = [
-        "django.contrib.admin",
-        "django.contrib.auth",
-        "django.contrib.contenttypes",
-        "django.contrib.sessions",
-        "django.contrib.messages",
-        "django.contrib.staticfiles",
-        # Project-I apps
-        "accounts",
-        "companies",
-        "intern_sessions",
-        # Third-party apps
-        "debug_toolbar",
-        "rest_framework",
-    ]
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    # Project-I apps
+    "accounts",
+    "companies",
+    "intern_sessions",
+    # Third-party apps
+    "rest_framework",
+]
 
-    MIDDLEWARE = [
-        "django.middleware.security.SecurityMiddleware",
-        "django.contrib.sessions.middleware.SessionMiddleware",
-        "django.middleware.common.CommonMiddleware",
-        "django.middleware.csrf.CsrfViewMiddleware",
-        "django.contrib.auth.middleware.AuthenticationMiddleware",
-        "django.contrib.messages.middleware.MessageMiddleware",
-        "django.middleware.clickjacking.XFrameOptionsMiddleware",
-        # Third party middleware
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-    ]
+AUTH_USER_MODEL = "accounts.CustomUser"
+
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+if not TESTING:
+    # INSTALLED_APPS.insert(0, "django.contrib.admin")  # Admin is needed outside of tests
+    INSTALLED_APPS.append("debug_toolbar")  # Debug toolbar only in non-testing mode
+    MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
 
 ROOT_URLCONF = "project.urls"
 
