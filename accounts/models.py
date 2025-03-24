@@ -8,6 +8,9 @@ class CustomUser(AbstractUser):
         ("student", "Student"),
         ("supervisor", "Supervisor"),
     ]
+    email = models.EmailField(
+        unique=True, blank=False, null=False
+    )  # Ensure email is required
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default="student")
 
     groups = models.ManyToManyField(
