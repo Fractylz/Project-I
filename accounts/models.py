@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from .managers import CustomUserManager  # Import the custom manager
 
 
 class CustomUser(AbstractUser):
@@ -15,6 +16,7 @@ class CustomUser(AbstractUser):
     user_permissions = models.ManyToManyField(
         Permission, related_name="customuser_permissions_set", blank=True
     )
+    objects = CustomUserManager()  # Assign the custom manager
 
 
 class BaseProfile(models.Model):  # Study balik
