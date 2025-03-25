@@ -1,6 +1,79 @@
-<h1>Logged in as: {{ request.user.username }}</h1>
-
-<a href="{% url 'account_logout' %}">Logout</a>
- The profile.html template is very simple. It just displays the username of the logged-in user and provides a link to the logout view. 
- The logout view is provided by Django’s authentication system. We can use the  logout()  function from  django.contrib.auth  to log out the user. 
- # accounts/views.py
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 200px;
+            background: #f4f4f4;
+            padding: 15px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+        .header {
+            background: #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to My Website</h1>
+        <div class="nav-links">
+            {% if request.user.is_authenticated %}
+                <span>Logged in as: {{ request.user.username }}</span>
+                <a href="{% url 'account_logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'account_login' %}">Login</a>
+                <a href="{% url 'account_signup' %}">Signup</a>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 My Website. All rights reserved.</p>
+    </div>
+</body>
+</html>
