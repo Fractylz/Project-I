@@ -82,7 +82,9 @@ class CustomUserAdmin(UserAdmin):
 class StudentProfileAdmin(admin.ModelAdmin):
     """Admin panel for managing Student Profiles separately."""
 
-    list_display = ("user", "student_id", "phone", "company", "session")
+    def get_list_display(self, request):
+        return [field.name for field in self.model._meta.fields]
+
     search_fields = ("user__username", "student_id")
     list_filter = ("company", "session")
 
@@ -91,7 +93,9 @@ class StudentProfileAdmin(admin.ModelAdmin):
 class SupervisorProfileAdmin(admin.ModelAdmin):
     """Admin panel for managing Supervisor Profiles separately."""
 
-    list_display = ("user", "phone", "campus")
+    def get_list_display(self, request):
+        return [field.name for field in self.model._meta.fields]
+
     search_fields = ("user__username", "campus")
 
 
