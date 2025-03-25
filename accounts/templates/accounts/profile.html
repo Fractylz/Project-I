@@ -1,0 +1,6 @@
+<h1>Logged in as: {{ request.user.username }}</h1>
+
+<a href="{% url 'account_logout' %}">Logout</a>
+ The profile.html template is very simple. It just displays the username of the logged-in user and provides a link to the logout view. 
+ The logout view is provided by Django’s authentication system. We can use the  logout()  function from  django.contrib.auth  to log out the user. 
+ # accounts/views.py
