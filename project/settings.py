@@ -166,10 +166,6 @@ SOCIALACCOUNT_PROVIDERS = {}
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # Uncomment for testing and development
 
-# ACCOUNT_LOGIN_METHODS = {"email"}  # Only email login
-# ACCOUNT_SIGNUP_FIELDS = [
-#     "username",
-#     "email",
-#     "password1",
-#     "password2",
-# ]
+
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
