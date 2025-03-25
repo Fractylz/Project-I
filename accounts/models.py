@@ -31,6 +31,7 @@ class BaseProfile(models.Model):  # Study balik
 
 
 class StudentProfile(BaseProfile):
+    # Native
     student_id = models.CharField(max_length=20, unique=True)
     company = models.ForeignKey(
         "companies.Company",
@@ -47,6 +48,44 @@ class StudentProfile(BaseProfile):
         related_name="students",
     )
 
+    # BLI Start of Internship
+
+    # Borang Jawapan Industri
+    bli02 = models.FileField(
+        upload_to="bli02/", null=True, blank=True, help_text="Borang Jawapan Industri"
+    )
+    # Surat Perjanjian Latihan Industri
+    bli03 = models.FileField(
+        upload_to="bli03/",
+        null=True,
+        blank=True,
+        help_text="Surat Perjanjian Latihan Industri",
+    )
+    # Borang Akuan Lapor Diri Untuk Latihan Industri di Organisasi
+    bli04 = models.FileField(
+        upload_to="bli04/",
+        null=True,
+        blank=True,
+        help_text="Borang Akuan Lapor Diri Untuk Latihan Industri di Organisasi",
+    )
+
+    # BLI End of Internship
+
+    # Borang Penialainan Penyelia Akademik
+    bli08 = models.FileField(
+        upload_to="bli08/",
+        null=True,
+        blank=True,
+        help_text="Borang Penialainan Penyelia Akademik",
+    )
+    # Borang Penilaian Penyelia Industri
+    bli09 = models.FileField(
+        upload_to="bli09/",
+        null=True,
+        blank=True,
+        help_text="Borang Penilaian Penyelia Industri",
+    )
+
     def __str__(self):
         return f"{self.user.username} ({self.student_id})"
 
@@ -57,5 +96,5 @@ class SupervisorProfile(BaseProfile):
     def __str__(self):
         return self.user.username
 
+
 # asdsadasdad
-#123

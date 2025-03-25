@@ -13,7 +13,6 @@ pytest-cov = "*"
 django-debug-toolbar = "*"
 django-rest-framework = "*"
 python-dotenv = "*"
-dotenv = "*"
 
 [dev-packages]
 
