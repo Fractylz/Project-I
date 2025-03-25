@@ -31,12 +31,21 @@ DEBUG = os.getenv("DEBUG") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1").split(",")
 
+SITE_ID = 1
+
 
 TESTING = "test" in sys.argv
 
 
 # Application definition
 INSTALLED_APPS = [
+    # Django AllAuth
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    # Django built-in apps
+    "django.contrib.sites",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -53,6 +62,11 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -62,6 +76,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware",  # AllAuth middleware
 ]
 
 if not TESTING:
@@ -146,3 +161,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+SOCIALACCOUNT_PROVIDERS = {}
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # Uncomment for testing and development
+
+# ACCOUNT_LOGIN_METHODS = {"email"}  # Only email login
+# ACCOUNT_SIGNUP_FIELDS = [
+#     "username",
+#     "email",
+#     "password1",
+#     "password2",
+# ]

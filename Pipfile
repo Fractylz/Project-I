@@ -14,6 +14,7 @@ django-debug-toolbar = "*"
 django-rest-framework = "*"
 python-dotenv = "*"
 django-crispy-forms = "*"
+django-allauth = {extras = ["socialaccount"], version = "*"}
 
 [dev-packages]
 
