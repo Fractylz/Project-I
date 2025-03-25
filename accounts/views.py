@@ -3,6 +3,7 @@ from django.views.generic.edit import FormView
 from django.contrib.auth import login
 from .forms import CustomUserCreationForm
 from .models import StudentProfile, SupervisorProfile
+from django.shortcuts import render
 
 
 class RegistrationFormView(FormView):
@@ -22,3 +23,7 @@ class RegistrationFormView(FormView):
 
         login(self.request, user)  # Log in the user after registration
         return super().form_valid(form)
+
+
+def profile(request):
+    return render(request, "accounts/profile.html")
