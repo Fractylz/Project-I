@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
+    "allauth.socialaccount.providers.google",
     # Django built-in apps
     "django.contrib.sites",
     "django.contrib.admin",
@@ -165,3 +165,11 @@ INTERNAL_IPS = [
 SOCIALACCOUNT_PROVIDERS = {}
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"  # Uncomment for testing and development
+
+# ACCOUNT_LOGIN_METHODS = {"email"}  # Only email login
+# ACCOUNT_SIGNUP_FIELDS = [
+#     "username",
+#     "email",
+#     "password1",
+#     "password2",
+# ]
