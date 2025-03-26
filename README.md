@@ -56,6 +56,7 @@ Ensure you have the following installed:
 
 6. **Signs You've Succeeded**
 ![alt text](image.png)
+Don't worry, this is a cause for alarm, what you're seeing is the standard 404 page when we don't have a landing page, next steps are to build it!
 
 
 ## 📝 Usage
